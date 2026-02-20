@@ -13,7 +13,7 @@ import { CAR_TYPES, TRANSMISSIONS, CAPACITY_OPTIONS } from "@/lib/constants";
 import { formatCurrency } from "@/lib/utils";
 
 interface FilterState {
-    type: string;
+    type: string[];
     transmission: string;
     capacity: string;
     minPrice: number;
@@ -38,14 +38,14 @@ export default function FilterBar({
     className,
 }: FilterBarProps) {
     const updateFilter = useCallback(
-        (key: keyof FilterState, value: string | number) => {
+        <K extends keyof FilterState>(key: K, value: FilterState[K]) => {
             onFilterChange({ ...filters, [key]: value });
         },
         [filters, onFilterChange]
     );
 
     const hasActiveFilters =
-        filters.type ||
+        filters.type.length > 0 ||
         filters.transmission ||
         filters.capacity ||
         filters.minPrice > MIN_PRICE ||
@@ -76,10 +76,13 @@ export default function FilterBar({
                         <label key={type} className="flex items-center gap-2 cursor-pointer group">
                             <input
                                 type="checkbox"
-                                checked={filters.type === type}
-                                onChange={() =>
-                                    updateFilter("type", filters.type === type ? "" : type)
-                                }
+                                checked={filters.type.includes(type)}
+                                onChange={() => {
+                                    const newTypes = filters.type.includes(type)
+                                        ? filters.type.filter((t) => t !== type)
+                                        : [...filters.type, type];
+                                    updateFilter("type", newTypes);
+                                }}
                                 className="w-4 h-4 text-primary border-gray-300 rounded focus:ring-primary/20"
                             />
                             <span className="text-sm font-body text-charcoal group-hover:text-primary transition-colors">
@@ -168,15 +171,15 @@ export default function FilterBar({
             {hasActiveFilters && (
                 <div className="pt-4 border-t border-gray-100">
                     <div className="flex flex-wrap gap-2">
-                        {filters.type && (
-                            <span className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
-                                {filters.type}
+                        {filters.type.map((activeType) => (
+                            <span key={activeType} className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
+                                {activeType}
                                 <X
                                     className="w-3 h-3 cursor-pointer"
-                                    onClick={() => updateFilter("type", "")}
+                                    onClick={() => updateFilter("type", filters.type.filter(t => t !== activeType))}
                                 />
                             </span>
-                        )}
+                        ))}
                         {filters.transmission && (
                             <span className="inline-flex items-center gap-1 px-2 py-1 text-xs bg-primary/10 text-primary rounded-full">
                                 {filters.transmission}

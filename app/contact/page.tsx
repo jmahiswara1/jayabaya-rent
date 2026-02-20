@@ -120,7 +120,7 @@ export default function ContactPage() {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Lokasi Jayabaya Rent di Pare, Kediri"
+                                title="Lokasi Jayabaya Trans di Pare, Kediri"
                             />
                         </motion.div>
                     </div>

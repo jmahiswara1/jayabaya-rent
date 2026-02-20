@@ -59,7 +59,7 @@ const SECTIONS = [
         items: [
             "Keterlambatan pengembalian: Rp 50.000 per jam dari waktu yang disepakati",
             "Kerusakan akibat kelalaian penyewa: ditanggung penyewa penuh sesuai estimasi bengkel",
-            "Kerusakan mesin akibat bukan kelalaian penyewa: ditanggung Jayabaya Rent",
+            "Kerusakan mesin akibat bukan kelalaian penyewa: ditanggung Jayabaya Trans",
             "Kehilangan kunci atau aksesori: dikenakan biaya penggantian",
             "Ban bocor (bukan akibat kecelakaan): ditanggung bersama 50:50",
             "Kecelakaan: penyewa wajib melapor ke pihak kepolisian dan segera menghubungi kami",

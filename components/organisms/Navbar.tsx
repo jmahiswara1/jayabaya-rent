@@ -3,63 +3,87 @@
 /**
  * Navbar organism
  * Sticky top navbar with:
- * - Logo + nav links
- * - CTA "Sewa Sekarang" button
- * - Mobile sidebar with smooth animation
- * - Compare indicator badge
+ * - Logo (image + text) matching black & white brand
+ * - Nav links
+ * - CTA "Kontak Kami" button (solid black pill)
+ * - Mobile sidebar
  * - Scroll-aware background transition
  */
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, GitCompareArrows, Phone } from "lucide-react";
-import Button from "@/components/atoms/Button";
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { Menu, X, GitCompareArrows, ArrowUpRight } from "lucide-react";
 import { NAV_LINKS, CONTACT } from "@/lib/constants";
 import { useCompareStore } from "@/lib/compareStore";
 import { cn } from "@/lib/utils";
 
 export default function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
     const pathname = usePathname();
     const compareCount = useCompareStore((s) => s.cars.length);
 
-    useEffect(() => {
-        const handleScroll = () => setIsScrolled(window.scrollY > 20);
-        window.addEventListener("scroll", handleScroll, { passive: true });
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
+    // Smooth scroll animations with Framer Motion
+    const { scrollY } = useScroll();
 
-    // Close menu on route change
+    // Animate background from transparent to mostly white
+    const backgroundColor = useTransform(
+        scrollY,
+        [0, 80],
+        ["rgba(255, 255, 255, 0)", "rgba(255, 255, 255, 0.95)"]
+    );
+
+    // Animate shadow/border when scrolled
+    const borderColor = useTransform(
+        scrollY,
+        [0, 80],
+        ["rgba(255, 255, 255, 0)", "rgba(243, 244, 246, 1)"] // gray-100
+    );
+
+    const boxShadow = useTransform(
+        scrollY,
+        [0, 80],
+        ["none", "0 1px 3px 0 rgba(0, 0, 0, 0.05)"]
+    );
+
+    // Optional blur effect when scrolled
+    const backdropFilter = useTransform(
+        scrollY,
+        [0, 80],
+        ["blur(0px)", "blur(12px)"]
+    );
+
     useEffect(() => {
         setIsMenuOpen(false);
     }, [pathname]);
 
     return (
         <>
-            <header
-                className={cn(
-                    "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-                    isScrolled
-                        ? "bg-white/95 backdrop-blur-md shadow-sm"
-                        : "bg-transparent"
-                )}
+            <motion.header
+                style={{
+                    backgroundColor,
+                    borderColor,
+                    boxShadow,
+                    backdropFilter,
+                }}
+                className="fixed top-0 left-0 right-0 z-50 border-b"
             >
                 <nav className="container-main flex items-center justify-between h-16 md:h-20">
                     {/* Logo */}
-                    <Link href="/" className="flex items-center gap-2">
-                        <span className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                            <span className="text-white font-bold text-sm font-heading">JR</span>
-                        </span>
-                        <span
-                            className={cn(
-                                "text-xl font-bold font-heading transition-colors",
-                                isScrolled ? "text-charcoal" : "text-charcoal"
-                            )}
-                        >
-                            Jayabaya<span className="text-primary">Rent</span>
+                    <Link href="/" className="flex items-center gap-3">
+                        <div className="w-10 h-10 flex items-center justify-center">
+                            <Image
+                                src="/images/logo.png"
+                                alt="Jayabaya Trans Logo"
+                                width={40}
+                                height={40}
+                                className="object-contain"
+                            />
+                        </div>
+                        <span className="text-lg font-extrabold font-heading text-black tracking-wide uppercase">
+                            Jayabaya Trans
                         </span>
                     </Link>
 
@@ -72,8 +96,8 @@ export default function Navbar() {
                                     className={cn(
                                         "px-4 py-2 text-sm font-medium font-body rounded-lg transition-colors",
                                         pathname === href
-                                            ? "text-primary bg-primary/5"
-                                            : "text-charcoal hover:text-primary hover:bg-surface"
+                                            ? "text-black font-semibold"
+                                            : "text-gray-700 hover:text-black"
                                     )}
                                 >
                                     {label}
@@ -87,31 +111,31 @@ export default function Navbar() {
                         {/* Compare Badge */}
                         {compareCount > 0 && (
                             <Link href="/compare" className="relative">
-                                <button className="p-2 text-charcoal hover:text-primary transition-colors">
+                                <button className="p-2 text-gray-700 hover:text-black transition-colors">
                                     <GitCompareArrows className="w-5 h-5" />
-                                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-primary text-white text-xs font-bold rounded-full flex items-center justify-center">
+                                    <span className="absolute -top-1 -right-1 w-5 h-5 bg-black text-white text-xs font-bold rounded-full flex items-center justify-center">
                                         {compareCount}
                                     </span>
                                 </button>
                             </Link>
                         )}
                         <a href={CONTACT.whatsappLink} target="_blank" rel="noopener noreferrer">
-                            <Button variant="primary" size="sm" pill leftIcon={<Phone className="w-4 h-4" />}>
-                                Sewa Sekarang
-                            </Button>
+                            <button className="bg-black text-white font-semibold font-body text-sm px-6 py-2.5 rounded-full hover:bg-gray-900 transition-colors">
+                                Hubungi Kami
+                            </button>
                         </a>
                     </div>
 
                     {/* Mobile Menu Toggle */}
                     <button
                         onClick={() => setIsMenuOpen(!isMenuOpen)}
-                        className="md:hidden p-2 text-charcoal hover:text-primary transition-colors"
+                        className="md:hidden p-2 text-black"
                         aria-label="Toggle menu"
                     >
                         {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
                     </button>
                 </nav>
-            </header>
+            </motion.header>
 
             {/* Mobile Sidebar Overlay */}
             <AnimatePresence>
@@ -134,12 +158,21 @@ export default function Navbar() {
                         >
                             {/* Sidebar Header */}
                             <div className="flex items-center justify-between p-5 border-b border-gray-100">
-                                <span className="text-lg font-bold font-heading text-charcoal">
-                                    Jayabaya<span className="text-primary">Rent</span>
-                                </span>
+                                <div className="flex items-center gap-2">
+                                    <Image
+                                        src="/images/logo.png"
+                                        alt="Jayabaya Trans Logo"
+                                        width={32}
+                                        height={32}
+                                        className="object-contain"
+                                    />
+                                    <span className="text-base font-extrabold font-heading text-black uppercase tracking-wide">
+                                        Jayabaya Trans
+                                    </span>
+                                </div>
                                 <button
                                     onClick={() => setIsMenuOpen(false)}
-                                    className="p-1 text-muted hover:text-charcoal"
+                                    className="p-1 text-gray-500 hover:text-black"
                                 >
                                     <X className="w-5 h-5" />
                                 </button>
@@ -154,8 +187,8 @@ export default function Navbar() {
                                         className={cn(
                                             "flex items-center px-5 py-3 text-base font-medium font-body transition-colors",
                                             pathname === href
-                                                ? "text-primary bg-primary/5 border-l-2 border-primary"
-                                                : "text-charcoal hover:text-primary hover:bg-surface"
+                                                ? "text-black border-l-2 border-black bg-gray-50 font-semibold"
+                                                : "text-gray-700 hover:text-black hover:bg-gray-50"
                                         )}
                                     >
                                         {label}
@@ -164,7 +197,7 @@ export default function Navbar() {
                                 {compareCount > 0 && (
                                     <Link
                                         href="/compare"
-                                        className="flex items-center gap-2 px-5 py-3 text-base font-medium font-body text-charcoal hover:text-primary hover:bg-surface"
+                                        className="flex items-center gap-2 px-5 py-3 text-base font-medium font-body text-gray-700 hover:text-black hover:bg-gray-50"
                                     >
                                         <GitCompareArrows className="w-5 h-5" />
                                         Bandingkan ({compareCount})
@@ -180,13 +213,11 @@ export default function Navbar() {
                                     rel="noopener noreferrer"
                                     className="block"
                                 >
-                                    <Button variant="primary" fullWidth pill leftIcon={<Phone className="w-4 h-4" />}>
-                                        Sewa Sekarang
-                                    </Button>
+                                    <button className="w-full bg-black text-white font-semibold font-body rounded-full py-3 flex items-center justify-center gap-2 hover:bg-gray-900 transition-colors">
+                                        <ArrowUpRight className="w-4 h-4" />
+                                        Hubungi Kami
+                                    </button>
                                 </a>
-                                <p className="text-xs text-muted text-center mt-3 font-body">
-                                    {CONTACT.operationalHours}
-                                </p>
                             </div>
                         </motion.aside>
                     </>

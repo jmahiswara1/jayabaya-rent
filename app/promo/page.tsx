@@ -19,7 +19,7 @@ export default function PromoPage() {
                 <div className="container-main text-center">
                     <SectionTitle
                         label="Promo & Paket"
-                        title="Penawaran Terbaik Jayabaya Rent"
+                        title="Penawaran Terbaik Jayabaya Trans"
                         subtitle="Nikmati berbagai paket wisata dan promo sewa mobil hemat untuk perjalanan Anda."
                         align="center"
                     />

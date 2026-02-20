@@ -18,7 +18,7 @@ export const FAQ_DATA: FAQCategory[] = [
         category: "Pemesanan",
         items: [
             {
-                question: "Bagaimana cara memesan mobil di Jayabaya Rent?",
+                question: "Bagaimana cara memesan mobil di Jayabaya Trans?",
                 answer:
                     "Anda bisa memesan melalui website kami dengan mengisi form booking, lalu kami akan menghubungi Anda via WhatsApp untuk konfirmasi. Alternatifnya, Anda bisa langsung chat WhatsApp ke 0812-1631-2645.",
             },
@@ -83,7 +83,7 @@ export const FAQ_DATA: FAQCategory[] = [
         category: "Operasional",
         items: [
             {
-                question: "Apa jam operasional Jayabaya Rent?",
+                question: "Apa jam operasional Jayabaya Trans?",
                 answer:
                     "Kami buka Senin–Minggu pukul 08.00–21.00 WIB. Untuk pengambilan di luar jam ini bisa diatur dengan pemberitahuan sebelumnya (tambahan biaya mungkin berlaku).",
             },

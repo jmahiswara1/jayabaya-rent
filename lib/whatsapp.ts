@@ -26,7 +26,7 @@ function formatBookingMessage(data: BookingData): string {
         data.totalEstimasi
     );
 
-    return `Halo Jayabaya Rent, saya ingin menyewa kendaraan:
+    return `Halo Jayabaya Trans, saya ingin menyewa kendaraan:
 
 Nama     : ${data.nama}
 No. HP   : ${data.hp}
@@ -63,7 +63,7 @@ export function generateQuickWhatsAppURL(message: string): string {
  * Generates a WhatsApp URL for a specific car inquiry
  */
 export function generateCarInquiryURL(carName: string): string {
-    const message = `Halo Jayabaya Rent, saya tertarik dengan ${carName}. Apakah unit tersedia? Mohon infonya. Terima kasih.`;
+    const message = `Halo Jayabaya Trans, saya tertarik dengan ${carName}. Apakah unit tersedia? Mohon infonya. Terima kasih.`;
     return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(message)}`;
 }
 

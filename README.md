@@ -1,12 +1,12 @@
-# Jayabaya Rent
+# Jayabaya Trans
 
-Website sewa mobil modern untuk **Jayabaya Rent**, penyedia jasa rental kendaraan yang berlokasi di Pare, Kabupaten Kediri, Jawa Timur. Dibangun sebagai aplikasi frontend-only berbasis Next.js dengan fokus pada performa, SEO, dan kemudahan pemesanan melalui WhatsApp.
+Website sewa mobil modern untuk **Jayabaya Trans**, penyedia jasa rental kendaraan yang berlokasi di Pare, Kabupaten Kediri, Jawa Timur. Dibangun sebagai aplikasi frontend-only berbasis Next.js dengan fokus pada performa, SEO, dan kemudahan pemesanan melalui WhatsApp.
 
 ---
 
 ## Deskripsi
 
-Jayabaya Rent hadir untuk mempermudah masyarakat, wisatawan, pelajar Kampung Inggris, dan pelaku bisnis lokal dalam menemukan dan memesan kendaraan sewa yang sesuai kebutuhan. Proses pemesanan dilakukan sepenuhnya melalui WhatsApp tanpa memerlukan akun atau login.
+Jayabaya Trans hadir untuk mempermudah masyarakat, wisatawan, pelajar Kampung Inggris, dan pelaku bisnis lokal dalam menemukan dan memesan kendaraan sewa yang sesuai kebutuhan. Proses pemesanan dilakukan sepenuhnya melalui WhatsApp tanpa memerlukan akun atau login.
 
 ---
 
@@ -111,4 +111,4 @@ Buka [http://localhost:3000](http://localhost:3000) di browser.
 
 ## Lisensi
 
-Proyek ini dikembangkan untuk keperluan internal Jayabaya Rent. Seluruh hak cipta dilindungi.
+Proyek ini dikembangkan untuk keperluan internal Jayabaya Trans. Seluruh hak cipta dilindungi.

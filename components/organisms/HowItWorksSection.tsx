@@ -25,7 +25,7 @@ export default function HowItWorksSection() {
                 <SectionTitle
                     label="Cara Sewa"
                     title="Sewa Mobil Mudah & Cepat"
-                    subtitle="Proses sewa mobil di Jayabaya Rent sangat praktis, cukup 4 langkah mudah."
+                    subtitle="Proses sewa mobil di Jayabaya Trans sangat praktis, cukup 4 langkah mudah."
                     align="center"
                 />
 

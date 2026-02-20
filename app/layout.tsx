@@ -18,8 +18,8 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "Jayabaya Rent - Sewa Mobil Terpercaya di Pare, Kediri",
-    template: "%s | Jayabaya Rent",
+    default: "Jayabaya Trans - Sewa Mobil Terpercaya di Pare, Kediri",
+    template: "%s | Jayabaya Trans",
   },
   description:
     "Jasa sewa mobil terpercaya di Pare, Kediri dan sekitarnya. Armada terawat, harga transparan, siap antar-jemput 24 jam. Booking mudah via WhatsApp.",
@@ -28,18 +28,18 @@ export const metadata: Metadata = {
     "rental mobil",
     "Pare",
     "Kediri",
-    "Jayabaya Rent",
+    "Jayabaya Trans",
     "sewa mobil Kediri",
     "rental mobil Pare",
     "Kampung Inggris",
   ],
-  authors: [{ name: "Jayabaya Rent" }],
+  authors: [{ name: "Jayabaya Trans" }],
   openGraph: {
-    title: "Jayabaya Rent - Sewa Mobil Terpercaya di Pare, Kediri",
+    title: "Jayabaya Trans - Sewa Mobil Terpercaya di Pare, Kediri",
     description:
       "Jasa sewa mobil terpercaya di Pare, Kediri dan sekitarnya. Armada terawat, harga transparan.",
-    url: "https://jayabayarent.com",
-    siteName: "Jayabaya Rent",
+    url: "https://jayabayatrans.com",
+    siteName: "Jayabaya Trans",
     locale: "id_ID",
     type: "website",
   },

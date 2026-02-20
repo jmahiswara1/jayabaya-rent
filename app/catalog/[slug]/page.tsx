@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ChevronRight, Share2, Heart } from "lucide-react";
+import { ChevronRight, MessageCircle } from "lucide-react";
 import PageLayout from "@/components/layout/PageLayout";
 import Badge from "@/components/atoms/Badge";
 import Button from "@/components/atoms/Button";
@@ -13,6 +13,7 @@ import CarGrid from "@/components/organisms/CarGrid";
 import TermsSection from "@/components/organisms/TermsSection";
 import { getCarBySlug, getRelatedCars, cars } from "@/data/cars";
 import { formatCurrency } from "@/lib/utils";
+import { generateQuickWhatsAppURL } from "@/lib/whatsapp";
 
 interface CarDetailProps {
     params: { slug: string };
@@ -31,7 +32,7 @@ export async function generateMetadata({ params }: CarDetailProps): Promise<Meta
     if (!car) return { title: "Mobil Tidak Ditemukan" };
 
     return {
-        title: `Sewa ${car.name} ${car.year} - Jayabaya Rent`,
+        title: `Sewa ${car.name} ${car.year} - Jayabaya Trans`,
         description: `Sewa mobil ${car.name} ${car.year} di Pare, Kediri. ${car.description}`,
     };
 }
@@ -44,6 +45,7 @@ export default function CarDetailPage({ params }: CarDetailProps) {
     }
 
     const relatedCars = getRelatedCars(car.id, car.type);
+    const waUrl = generateQuickWhatsAppURL(`Halo Jayabaya Trans! Saya ingin tanya dulu mengenai sewa mobil ${car.name}.`);
 
     return (
         <PageLayout>
@@ -108,12 +110,11 @@ export default function CarDetailPage({ params }: CarDetailProps) {
                                     <span className="text-muted font-body mb-1">/ 24 jam</span>
                                 </div>
                                 <div className="flex gap-3">
-                                    <Button variant="outline" fullWidth leftIcon={<Share2 className="w-4 h-4" />}>
-                                        Share
-                                    </Button>
-                                    <Button variant="outline" fullWidth leftIcon={<Heart className="w-4 h-4" />}>
-                                        Simpan
-                                    </Button>
+                                    <a href={waUrl} target="_blank" rel="noopener noreferrer" className="w-full">
+                                        <Button variant="outline" fullWidth leftIcon={<MessageCircle className="w-4 h-4" />}>
+                                            Tanya Dulu
+                                        </Button>
+                                    </a>
                                 </div>
                             </div>
 

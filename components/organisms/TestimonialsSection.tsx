@@ -16,7 +16,7 @@ export default function TestimonialsSection() {
                         <SectionTitle
                             label="Testimoni"
                             title="Kata Mereka Tentang Kami"
-                            subtitle="Ribuan pelanggan puas telah mempercayakan perjalanan mereka kepada Jayabaya Rent."
+                            subtitle="Ribuan pelanggan puas telah mempercayakan perjalanan mereka kepada Jayabaya Trans."
                             align="left"
                         />
                         <div className="mt-8 p-6 bg-surface rounded-2xl border border-gray-100 hidden lg:block">

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --color-primary: #E31E24;
+    --color-primary: #0A0A0A;
     --color-bg: #FFFFFF;
     --color-text: #1A1A1A;
     --color-muted: #707070;
@@ -20,7 +20,12 @@
     @apply bg-white text-charcoal font-body antialiased;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-heading;
   }
 }

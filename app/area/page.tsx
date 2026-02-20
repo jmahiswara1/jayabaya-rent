@@ -185,7 +185,7 @@ export default function AreaPage() {
                         Siap Menjelajah Kediri?
                     </h3>
                     <p className="text-muted font-body mb-6">
-                        Hubungi kami untuk merencanakan perjalanan Anda bersama Jayabaya Rent.
+                        Hubungi kami untuk merencanakan perjalanan Anda bersama Jayabaya Trans.
                     </p>
                     <Link href="/catalog">
                         <Button pill>Lihat Armada Kami</Button>

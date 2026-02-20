@@ -25,7 +25,7 @@ export default function FAQPage() {
                     <SectionTitle
                         label="Tanya Jawab"
                         title="Pertanyaan yang Sering Ditanyakan"
-                        subtitle="Temukan jawaban atas pertanyaan umum seputar sewa mobil di Jayabaya Rent."
+                        subtitle="Temukan jawaban atas pertanyaan umum seputar sewa mobil di Jayabaya Trans."
                         align="center"
                     />
                 </div>

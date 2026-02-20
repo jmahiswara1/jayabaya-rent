@@ -21,8 +21,9 @@ function CatalogContent() {
     const searchParams = useSearchParams();
 
     // Parse initial state from URL
+    const typesParam = searchParams.get("type");
     const initialFilters: FilterState = {
-        type: searchParams.get("type") || "",
+        type: typesParam ? typesParam.split(",") : [],
         transmission: searchParams.get("transmission") || "",
         capacity: searchParams.get("capacity") || "",
         minPrice: searchParams.get("minPrice") ? Number(searchParams.get("minPrice")) : 200000,
@@ -50,7 +51,7 @@ function CatalogContent() {
         if (searchQuery) params.set("q", searchQuery);
         if (sortBy !== "popular") params.set("sort", sortBy);
 
-        if (filters.type) params.set("type", filters.type);
+        if (filters.type.length > 0) params.set("type", filters.type.join(","));
         if (filters.transmission) params.set("transmission", filters.transmission);
         if (filters.capacity) params.set("capacity", filters.capacity);
         if (filters.minPrice > 200000) params.set("minPrice", String(filters.minPrice));
@@ -61,7 +62,7 @@ function CatalogContent() {
 
     const handleResetFilters = () => {
         setFilters({
-            type: "",
+            type: [],
             transmission: "",
             capacity: "",
             minPrice: 200000,
@@ -79,8 +80,8 @@ function CatalogContent() {
                 if (searchQuery && !car.name.toLowerCase().includes(searchQuery.toLowerCase())) {
                     return false;
                 }
-                // Type
-                if (filters.type && car.type !== filters.type) {
+                // Type (Multi-choice)
+                if (filters.type.length > 0 && !filters.type.includes(car.type)) {
                     return false;
                 }
                 // Transmission
@@ -122,7 +123,7 @@ function CatalogContent() {
             <SectionTitle
                 label="Katalog"
                 title="Pilih Mobil Impian Anda"
-                subtitle="Temukan mobil yang tepat untuk kebutuhan perjalanan Anda di Jayabaya Rent."
+                subtitle="Temukan mobil yang tepat untuk kebutuhan perjalanan Anda di Jayabaya Trans."
             />
 
             <div className="mt-8 flex flex-col lg:flex-row gap-8 items-start relative">
