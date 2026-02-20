@@ -32,16 +32,16 @@ Jayabaya Trans hadir untuk mempermudah masyarakat, wisatawan, pelajar Kampung In
 ### Halaman
 
 - **Beranda** — Hero section, keunggulan layanan, cara sewa, testimoni, dan CTA
-- **Katalog** — Daftar 20 kendaraan dengan filter tipe/transmisi/kapasitas, pencarian, dan pengurutan
-- **Detail Mobil** — Galeri foto, spesifikasi lengkap, form pemesanan terintegrasi WA
-- **Bandingkan** — Pilih hingga 3 mobil, bandingkan spesifikasi secara berdampingan
-- **Pemesanan** — Form pemesanan lengkap, dikirim otomatis ke WhatsApp
-- **Tentang Kami** — Sejarah, statistik, dan keunggulan layanan
-- **FAQ** — Pertanyaan umum dengan navigasi per kategori
-- **Kontak** — Informasi kontak, embed Google Maps, dan form pesan cepat
-- **Promo** — Paket sewa spesial dengan harga dan detail layanan
-- **Area Layanan** — Kota yang dilayani, biaya antar luar kota, destinasi populer
-- **Syarat dan Ketentuan** — Dokumen yang diperlukan, aturan, pembayaran, dan denda
+- **Katalog (`/katalog`)** — Daftar 20 kendaraan dengan filter tipe/transmisi/kapasitas, pencarian, dan pengurutan
+- **Detail Mobil (`/katalog/[slug]`)** — Galeri foto, spesifikasi lengkap, form pemesanan terintegrasi WA
+- **Bandingkan (`/perbandingan`)** — Pilih hingga 3 mobil, bandingkan spesifikasi secara berdampingan
+- **Pemesanan (`/booking`)** — Form pemesanan lengkap, dikirim otomatis ke WhatsApp
+- **Tentang Kami (`/about`)** — Sejarah, statistik, dan keunggulan layanan
+- **FAQ (`/faq`)** — Pertanyaan umum dengan navigasi per kategori
+- **Kontak (`/kontak`)** — Informasi kontak, embed Google Maps, dan form pesan cepat
+- **Promo (`/promo`)** — Paket sewa spesial dengan harga dan detail layanan
+- **Area Layanan (`/area-layanan`)** — Kota yang dilayani, biaya antar luar kota, destinasi populer
+- **Syarat dan Ketentuan (`/syarat-ketentuan`)** — Dokumen yang diperlukan, aturan, pembayaran, dan denda
 
 ### Teknis
 
