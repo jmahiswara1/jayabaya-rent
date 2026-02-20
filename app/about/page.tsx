@@ -62,16 +62,11 @@ export default function AboutPage() {
                         priority
                         sizes="100vw"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-transparent" />
-                </div>
-
-                {/* Background glow */}
-                <div className="absolute inset-0 z-0 pointer-events-none">
-                    <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl -translate-y-1/2" />
+                    <div className="absolute inset-0 bg-charcoal/60" />
                 </div>
 
                 <div className="container-main relative z-10">
-                    <div className="text-left w-full max-w-2xl mx-auto lg:mx-0">
+                    <div className="text-center w-full max-w-3xl mx-auto flex flex-col items-center">
                         <motion.span
                             initial={{ opacity: 0, y: 10 }}
                             animate={{ opacity: 1, y: 0 }}
@@ -86,7 +81,7 @@ export default function AboutPage() {
                             transition={{ delay: 0.2 }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight"
                         >
-                            Mitra Perjalanan <span className="text-primary">Terpercaya</span> Anda di Kediri
+                            Mitra Perjalanan Termurah Anda di Kediri
                         </motion.h1>
                         <motion.p
                             initial={{ opacity: 0, y: 20 }}
@@ -101,9 +96,9 @@ export default function AboutPage() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.5 }}
-                            className="mt-10 flex flex-col sm:flex-row gap-4 justify-start"
+                            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center w-full"
                         >
-                            <Link href="/catalog">
+                            <Link href="/katalog">
                                 <Button size="lg" pill className="w-full sm:w-auto shadow-lg shadow-primary/20">
                                     Lihat Armada Kami
                                 </Button>
@@ -232,7 +227,7 @@ export default function AboutPage() {
                         Temukan armada terbaik pilihan Anda dan pesan sekarang dalam hitungan menit.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                        <Link href="/catalog">
+                        <Link href="/katalog">
                             <Button size="lg" pill className="bg-white text-primary hover:bg-white/90">
                                 Lihat Katalog Mobil
                             </Button>

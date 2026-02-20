@@ -132,7 +132,7 @@ export default function SyaratPage() {
                                 Tanya via WhatsApp
                             </Button>
                         </a>
-                        <Link href="/catalog">
+                        <Link href="/katalog">
                             <Button variant="outline" pill>
                                 Lihat Katalog Mobil
                             </Button>

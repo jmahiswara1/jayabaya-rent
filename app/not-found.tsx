@@ -31,7 +31,7 @@ export default function NotFound() {
                             Kembali ke Beranda
                         </Button>
                     </Link>
-                    <Link href="/catalog">
+                    <Link href="/katalog">
                         <Button variant="outline" leftIcon={<Search className="w-4 h-4" />} pill>
                             Lihat Katalog Mobil
                         </Button>

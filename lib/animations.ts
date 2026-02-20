@@ -16,9 +16,8 @@ export const pageTransition = {
 
 // Card entrance: staggered fade + slide up
 export const cardContainer = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-        opacity: 1,
         transition: {
             staggerChildren: 0.08,
         },
@@ -36,9 +35,8 @@ export const cardItem = {
 
 // Hero text: staggered slide up per line
 export const heroContainer = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-        opacity: 1,
         transition: {
             staggerChildren: 0.15,
         },
@@ -111,9 +109,8 @@ export const fadeIn = {
 
 // Stagger container for scroll reveal groups
 export const staggerContainer = {
-    hidden: { opacity: 0 },
+    hidden: {},
     visible: {
-        opacity: 1,
         transition: {
             staggerChildren: 0.1,
             delayChildren: 0.1,

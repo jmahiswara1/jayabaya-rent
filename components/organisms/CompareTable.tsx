@@ -112,7 +112,7 @@ export default function CompareTable() {
                                             Sewa Ini
                                         </Button>
                                     </a>
-                                    <Link href={`/catalog/${car.slug}`} className="w-full">
+                                    <Link href={`/katalog/${car.slug}`} className="w-full">
                                         <Button
                                             variant="ghost"
                                             size="sm"

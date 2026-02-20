@@ -69,7 +69,7 @@ export default function ComparePage() {
                             >
                                 Pilih Mobil untuk Dibandingkan
                             </Button>
-                            <Link href="/catalog">
+                            <Link href="/katalog">
                                 <Button variant="outline">Lihat Katalog</Button>
                             </Link>
                         </div>

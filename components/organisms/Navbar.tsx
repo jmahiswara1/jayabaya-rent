@@ -15,7 +15,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { Menu, X, GitCompareArrows, ArrowUpRight } from "lucide-react";
+import { Menu, X, GitCompareArrows, ArrowUpRight, ChevronDown } from "lucide-react";
 import { NAV_LINKS, CONTACT } from "@/lib/constants";
 import { useCompareStore } from "@/lib/compareStore";
 import { cn } from "@/lib/utils";
@@ -89,19 +89,48 @@ export default function Navbar() {
 
                     {/* Desktop Nav */}
                     <ul className="hidden md:flex items-center gap-1">
-                        {NAV_LINKS.map(({ label, href }) => (
-                            <li key={href}>
-                                <Link
-                                    href={href}
-                                    className={cn(
-                                        "px-4 py-2 text-sm font-medium font-body rounded-lg transition-colors",
-                                        pathname === href
-                                            ? "text-black font-semibold"
-                                            : "text-gray-700 hover:text-black"
-                                    )}
-                                >
-                                    {label}
-                                </Link>
+                        {NAV_LINKS.map((item) => (
+                            <li key={item.label} className="relative group">
+                                {item.href ? (
+                                    <Link
+                                        href={item.href!}
+                                        className={cn(
+                                            "px-4 py-2 text-sm font-medium font-body rounded-lg transition-colors flex items-center gap-1",
+                                            pathname === item.href
+                                                ? "text-black font-semibold"
+                                                : "text-gray-700 hover:text-black"
+                                        )}
+                                    >
+                                        {item.label}
+                                    </Link>
+                                ) : (
+                                    <>
+                                        <button
+                                            className="px-4 py-2 text-sm font-medium font-body rounded-lg transition-colors flex items-center gap-1 text-gray-700 hover:text-black group-hover:text-black"
+                                        >
+                                            {item.label}
+                                            <ChevronDown className="w-4 h-4 transition-transform group-hover:rotate-180" />
+                                        </button>
+                                        {item.dropdown && (
+                                            <div className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-[360px] bg-white rounded-xl shadow-[0_8px_30px_rgb(0,0,0,0.12)] border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 p-3 grid grid-cols-2 gap-1 translate-y-2 group-hover:translate-y-0">
+                                                {item.dropdown.map((subItem) => (
+                                                    <Link
+                                                        key={subItem.label}
+                                                        href={subItem.href}
+                                                        className={cn(
+                                                            "flex items-center px-4 py-3 text-sm font-medium font-body rounded-lg transition-colors",
+                                                            pathname === subItem.href
+                                                                ? "text-black bg-gray-50 font-semibold"
+                                                                : "text-gray-700 hover:text-black hover:bg-gray-50"
+                                                        )}
+                                                    >
+                                                        {subItem.label}
+                                                    </Link>
+                                                ))}
+                                            </div>
+                                        )}
+                                    </>
+                                )}
                             </li>
                         ))}
                     </ul>
@@ -110,7 +139,7 @@ export default function Navbar() {
                     <div className="hidden md:flex items-center gap-3">
                         {/* Compare Badge */}
                         {compareCount > 0 && (
-                            <Link href="/compare" className="relative">
+                            <Link href="/perbandingan" className="relative">
                                 <button className="p-2 text-gray-700 hover:text-black transition-colors">
                                     <GitCompareArrows className="w-5 h-5" />
                                     <span className="absolute -top-1 -right-1 w-5 h-5 bg-black text-white text-xs font-bold rounded-full flex items-center justify-center">
@@ -180,23 +209,53 @@ export default function Navbar() {
 
                             {/* Sidebar Links */}
                             <nav className="flex-1 py-4">
-                                {NAV_LINKS.map(({ label, href }) => (
-                                    <Link
-                                        key={href}
-                                        href={href}
-                                        className={cn(
-                                            "flex items-center px-5 py-3 text-base font-medium font-body transition-colors",
-                                            pathname === href
-                                                ? "text-black border-l-2 border-black bg-gray-50 font-semibold"
-                                                : "text-gray-700 hover:text-black hover:bg-gray-50"
+                                {NAV_LINKS.map((item) => (
+                                    <div key={item.label}>
+                                        {item.href ? (
+                                            <Link
+                                                href={item.href!}
+                                                className={cn(
+                                                    "flex items-center px-5 py-3 text-base font-medium font-body transition-colors",
+                                                    pathname === item.href
+                                                        ? "text-black border-l-2 border-black bg-gray-50 font-semibold"
+                                                        : "text-gray-700 hover:text-black hover:bg-gray-50"
+                                                )}
+                                                onClick={() => setIsMenuOpen(false)}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ) : (
+                                            <details className="group">
+                                                <summary className="flex items-center justify-between px-5 py-3 text-base font-medium font-body text-gray-700 hover:text-black hover:bg-gray-50 cursor-pointer list-none appearance-none [&::-webkit-details-marker]:hidden">
+                                                    {item.label}
+                                                    <ChevronDown className="w-5 h-5 group-open:rotate-180 transition-transform" />
+                                                </summary>
+                                                {item.dropdown && (
+                                                    <div className="bg-gray-50 py-2 border-y border-gray-100 grid grid-cols-1">
+                                                        {item.dropdown.map((subItem) => (
+                                                            <Link
+                                                                key={subItem.label}
+                                                                href={subItem.href}
+                                                                className={cn(
+                                                                    "block pl-10 pr-5 py-2.5 text-sm font-body transition-colors",
+                                                                    pathname === subItem.href
+                                                                        ? "text-black font-semibold"
+                                                                        : "text-gray-600 hover:text-black"
+                                                                )}
+                                                                onClick={() => setIsMenuOpen(false)}
+                                                            >
+                                                                {subItem.label}
+                                                            </Link>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </details>
                                         )}
-                                    >
-                                        {label}
-                                    </Link>
+                                    </div>
                                 ))}
                                 {compareCount > 0 && (
                                     <Link
-                                        href="/compare"
+                                        href="/perbandingan"
                                         className="flex items-center gap-2 px-5 py-3 text-base font-medium font-body text-gray-700 hover:text-black hover:bg-gray-50"
                                     >
                                         <GitCompareArrows className="w-5 h-5" />
@@ -213,8 +272,8 @@ export default function Navbar() {
                                     rel="noopener noreferrer"
                                     className="block"
                                 >
-                                    <button className="w-full bg-black text-white font-semibold font-body rounded-full py-3 flex items-center justify-center gap-2 hover:bg-gray-900 transition-colors">
-                                        <ArrowUpRight className="w-4 h-4" />
+                                    <button className="group w-full bg-black text-white font-semibold font-body rounded-full py-3 flex items-center justify-center gap-2 hover:bg-gray-900 transition-colors">
+                                        <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                         Hubungi Kami
                                     </button>
                                 </a>

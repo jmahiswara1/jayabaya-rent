@@ -87,7 +87,7 @@ export default function CompareBar() {
                                 >
                                     Hapus Semua
                                 </button>
-                                <Link href="/compare">
+                                <Link href="/perbandingan">
                                     <Button
                                         variant="primary"
                                         size="sm"

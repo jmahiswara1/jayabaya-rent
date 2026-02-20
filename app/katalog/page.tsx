@@ -57,7 +57,7 @@ function CatalogContent() {
         if (filters.minPrice > 200000) params.set("minPrice", String(filters.minPrice));
         if (filters.maxPrice < 1000000) params.set("maxPrice", String(filters.maxPrice));
 
-        router.replace(`/catalog?${params.toString()}`, { scroll: false });
+        router.replace(`/katalog?${params.toString()}`, { scroll: false });
     }, [filters, searchQuery, sortBy, router]);
 
     const handleResetFilters = () => {

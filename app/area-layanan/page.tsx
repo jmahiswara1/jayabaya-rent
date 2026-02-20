@@ -187,7 +187,7 @@ export default function AreaPage() {
                     <p className="text-muted font-body mb-6">
                         Hubungi kami untuk merencanakan perjalanan Anda bersama Jayabaya Trans.
                     </p>
-                    <Link href="/catalog">
+                    <Link href="/katalog">
                         <Button pill>Lihat Armada Kami</Button>
                     </Link>
                 </div>

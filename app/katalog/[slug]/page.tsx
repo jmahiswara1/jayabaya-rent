@@ -54,7 +54,7 @@ export default function CarDetailPage({ params }: CarDetailProps) {
                 <div className="container-main flex items-center gap-2 text-sm text-muted font-body">
                     <Link href="/" className="hover:text-primary transition-colors">Home</Link>
                     <ChevronRight className="w-4 h-4" />
-                    <Link href="/catalog" className="hover:text-primary transition-colors">Katalog</Link>
+                    <Link href="/katalog" className="hover:text-primary transition-colors">Katalog</Link>
                     <ChevronRight className="w-4 h-4" />
                     <span className="text-charcoal font-medium truncate">{car.name}</span>
                 </div>

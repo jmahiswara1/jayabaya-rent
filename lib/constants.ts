@@ -3,28 +3,43 @@
  */
 
 // ─── Navigation Links ───
-export const NAV_LINKS = [
+export type NavItem = {
+    label: string;
+    href?: string;
+    dropdown?: { label: string; href: string }[];
+};
+
+export const NAV_LINKS: NavItem[] = [
     { label: "Home", href: "/" },
-    { label: "Katalog", href: "/catalog" },
+    { label: "Katalog", href: "/katalog" },
     { label: "About", href: "/about" },
-    { label: "FAQ", href: "/faq" },
-    { label: "Kontak", href: "/contact" },
-] as const;
+    {
+        label: "Lainnya",
+        dropdown: [
+            { label: "Perbandingan", href: "/perbandingan" },
+            { label: "FAQ", href: "/faq" },
+            { label: "Promo", href: "/promo" },
+            { label: "Kontak", href: "/kontak" },
+            { label: "Area Layanan", href: "/area-layanan" },
+            { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
+        ]
+    }
+];
 
 // ─── Footer Columns ───
 export const FOOTER_NAV = {
     navigasi: [
         { label: "Home", href: "/" },
-        { label: "Katalog", href: "/catalog" },
-        { label: "Perbandingan", href: "/compare" },
+        { label: "Katalog", href: "/katalog" },
+        { label: "Perbandingan", href: "/perbandingan" },
         { label: "Promo", href: "/promo" },
-        { label: "Area Layanan", href: "/area" },
+        { label: "Area Layanan", href: "/area-layanan" },
     ],
     informasi: [
         { label: "Tentang Kami", href: "/about" },
         { label: "FAQ", href: "/faq" },
-        { label: "Kontak", href: "/contact" },
-        { label: "Syarat & Ketentuan", href: "/syarat" },
+        { label: "Kontak", href: "/kontak" },
+        { label: "Syarat & Ketentuan", href: "/syarat-ketentuan" },
     ],
 } as const;
 
@@ -38,7 +53,7 @@ export const CONTACT = {
     address: "Jl. Dr. Sutomo No.3d, Cangkring, Pelem, Kec. Pare, Kabupaten Kediri, Jawa Timur 64213",
     addressShort: "Pare, Kediri",
     operationalHours: "Senin - Minggu, 08:00 - 21:00 WIB",
-    email: "info@jayabayatrans.com",
+    email: "jayabayatrans@gmail.com",
     mapsEmbed:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15817.474542646!2d112.1288!3d-7.7572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785a1b0e7c27ef%3A0x9e45e0369b8c0b0!2sPare%2C%20Kediri%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1",
 } as const;
@@ -116,7 +131,7 @@ export const HOW_TO_RENT = [
 // ─── Testimonials ───
 export const TESTIMONIALS = [
     {
-        name: "Budi Santoso",
+        name: "Gadang Mahiswara",
         role: "Wisatawan",
         content:
             "Pelayanan sangat memuaskan. Mobil bersih dan wangi, driver juga sangat sopan dan hafal jalan di Kediri.",
@@ -124,7 +139,7 @@ export const TESTIMONIALS = [
         avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&q=80",
     },
     {
-        name: "Siti Aminah",
+        name: "Gadang Mahiswara",
         role: "Mahasiswa",
         content:
             "Sewa lepas kunci di Jayabaya sangat mudah prosesnya. Harga juga bersaing dibanding tempat lain.",
@@ -132,7 +147,7 @@ export const TESTIMONIALS = [
         avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&q=80",
     },
     {
-        name: "Rizky Pratama",
+        name: "Sandhika Galih",
         role: "Guru",
         content:
             "Rekomendasiin banget buat yang mau wisata ke Gunung Kelud. Drivernya asik diajak ngobrol.",

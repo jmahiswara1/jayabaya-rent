@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Headphones, ShieldCheck, BadgeDollarSign, MapPin } from "lucide-react";
 import SectionTitle from "@/components/molecules/SectionTitle";
 import { WHY_CHOOSE_US } from "@/lib/constants";
-import { staggerContainer, staggerItem } from "@/lib/animations";
+import { staggerContainer, cardItem } from "@/lib/animations";
 
 const iconMap = {
     Headphones,
@@ -35,7 +35,7 @@ export default function FeaturesSection() {
                         return (
                             <motion.div
                                 key={idx}
-                                variants={staggerItem}
+                                variants={cardItem}
                                 className="flex flex-col items-center text-center p-6 rounded-2xl bg-surface hover:bg-white hover:shadow-card transition-all duration-300 border border-transparent hover:border-gray-100"
                             >
                                 <div className="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6 text-primary">

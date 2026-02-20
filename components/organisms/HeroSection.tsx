@@ -84,7 +84,7 @@ export default function HeroSection() {
                         {/* CTA Buttons */}
                         <motion.div variants={item} className="flex flex-wrap items-center gap-3">
                             {/* Lihat Katalog - plain black pill */}
-                            <Link href="/catalog">
+                            <Link href="/katalog">
                                 <button className="inline-flex items-center justify-center bg-black text-white font-semibold font-body text-base px-8 py-4 rounded-full hover:bg-gray-900 transition-all duration-200">
                                     Lihat Katalog
                                 </button>
@@ -93,8 +93,8 @@ export default function HeroSection() {
                             <a href={waUrl} target="_blank" rel="noopener noreferrer">
                                 <button className="group inline-flex items-center gap-3 bg-black text-white font-semibold font-body text-base pl-8 pr-2 py-2 rounded-full hover:bg-gray-900 transition-all duration-200">
                                     Sewa Sekarang
-                                    <span className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-95 transition-transform">
-                                        <ArrowUpRight className="w-5 h-5 text-black" />
+                                    <span className="w-10 h-10 bg-white rounded-full flex items-center justify-center shrink-0 group-hover:scale-95 transition-transform duration-300">
+                                        <ArrowUpRight className="w-5 h-5 text-black transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                                     </span>
                                 </button>
                             </a>

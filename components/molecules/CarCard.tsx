@@ -30,7 +30,7 @@ export default function CarCard({ car, onCompare, isCompared }: CarCardProps) {
             className="group bg-white rounded-2xl shadow-card hover:shadow-card-hover transition-shadow duration-300 overflow-hidden flex flex-col"
         >
             {/* Car Image with Grid Background */}
-            <Link href={`/catalog/${car.slug}`} className="block relative overflow-hidden aspect-[4/3] bg-surface">
+            <Link href={`/katalog/${car.slug}`} className="block relative overflow-hidden aspect-[4/3] bg-surface">
                 {/* Background Grid */}
                 <div
                     className="absolute inset-0 z-0 opacity-50"
@@ -64,7 +64,7 @@ export default function CarCard({ car, onCompare, isCompared }: CarCardProps) {
             <div className="p-4 flex flex-col flex-1">
                 {/* Name & Badges */}
                 <div className="mb-3">
-                    <Link href={`/catalog/${car.slug}`}>
+                    <Link href={`/katalog/${car.slug}`}>
                         <h3 className="text-lg font-bold font-heading text-charcoal hover:text-primary transition-colors">
                             {car.name}
                         </h3>
@@ -106,7 +106,7 @@ export default function CarCard({ car, onCompare, isCompared }: CarCardProps) {
                                 {isCompared ? "Dipilih" : "Bandingkan"}
                             </Button>
                         )}
-                        <Link href={`/catalog/${car.slug}`} className="flex-1">
+                        <Link href={`/katalog/${car.slug}`} className="flex-1">
                             <Button
                                 variant="primary"
                                 size="sm"

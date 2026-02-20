@@ -31,7 +31,7 @@ export default function Home() {
             subtitle="Pilihan mobil terpopuler dengan performa terbaik untuk perjalanan Anda."
             align="left"
             rightAction={
-              <Link href="/catalog" className="hidden md:block">
+              <Link href="/katalog" className="hidden md:block">
                 <Button variant="ghost" rightIcon={<ArrowRight className="w-4 h-4" />}>
                   Lihat Semua Mobil
                 </Button>
@@ -44,7 +44,7 @@ export default function Home() {
           </div>
 
           <div className="mt-8 text-center md:hidden">
-            <Link href="/catalog">
+            <Link href="/katalog">
               <Button variant="outline" fullWidth rightIcon={<ArrowRight className="w-4 h-4" />}>
                 Lihat Semua Mobil
               </Button>

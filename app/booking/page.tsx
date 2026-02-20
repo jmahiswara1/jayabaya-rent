@@ -87,7 +87,7 @@ export default function BookingPage() {
                             <p className="text-sm font-body text-charcoal mb-1">
                                 Ingin lihat pilihan mobil dulu?
                             </p>
-                            <Link href="/catalog">
+                            <Link href="/katalog">
                                 <Button variant="outline" size="sm" pill className="mt-2">
                                     Lihat Katalog
                                 </Button>
