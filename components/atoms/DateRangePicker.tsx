@@ -50,12 +50,6 @@ export default function DateRangePicker({ value, onChange, placeholder = "Pilih 
         setIsOpen(false);
     };
 
-    const formatRange = (range?: DateRange) => {
-        if (!range?.from) return "";
-        if (!range.to) return format(range.from, "dd MMM yyyy", { locale: id });
-        return `${format(range.from, "dd MMM yyyy", { locale: id })} - ${format(range.to, "dd MMM yyyy", { locale: id })}`;
-    };
-
     return (
         <div className={cn("relative", className)} ref={ref}>
             {/* Trigger Buttons */}
