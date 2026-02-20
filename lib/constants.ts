@@ -35,21 +35,21 @@ export const CONTACT = {
     whatsappLink: "https://wa.me/6281216312645",
     instagram: "@j.mahiswara_",
     instagramLink: "https://instagram.com/j.mahiswara_",
-    address: "Jl. Brawijaya No. 123, Tulungrejo, Pare, Kediri, Jawa Timur 64212",
-    addressShort: "Pare, Kab. Kediri, Jawa Timur",
+    address: "Jl. Dr. Sutomo No.3d, Cangkring, Pelem, Kec. Pare, Kabupaten Kediri, Jawa Timur 64213",
+    addressShort: "Pare, Kediri",
     operationalHours: "Senin - Minggu, 08:00 - 21:00 WIB",
-    email: "info@jayabayarent.com",
+    email: "info@jayabayatrans.com",
     mapsEmbed:
         "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15817.474542646!2d112.1288!3d-7.7572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e785a1b0e7c27ef%3A0x9e45e0369b8c0b0!2sPare%2C%20Kediri%20Regency%2C%20East%20Java!5e0!3m2!1sen!2sid!4v1",
 } as const;
 
 // ─── Site Metadata ───
 export const SITE = {
-    name: "Jayabaya Rent",
+    name: "Jayabaya Trans",
     tagline: "Sewa Mobil Terpercaya di Pare, Kediri",
     description:
-        "Jasa sewa mobil terpercaya di Pare, Kediri dan sekitarnya. Armada terawat, harga transparan, siap antar-jemput 24 jam.",
-    url: "https://jayabayarent.com",
+        "Jasa sewa mobil terpercaya di Pare, Kediri dan sekitarnya. Armada terawat, harga transparan, siap antar-jemput sekitar Pare.",
+    url: "https://jayabayatrans.com",
     founded: 2015,
 } as const;
 
@@ -76,7 +76,7 @@ export const WHY_CHOOSE_US = [
     {
         title: "Antar Jemput",
         description:
-            "Layanan antar jemput unit gratis untuk area dalam kota Pare dan Kediri.",
+            "Layanan antar jemput unit gratis untuk area dalam Pare",
         icon: "MapPin" as const,
     },
 ] as const;
@@ -87,28 +87,28 @@ export const HOW_TO_RENT = [
         step: 1,
         title: "Pilih Mobil",
         description:
-            "Pilih unit mobil yang Anda inginkan melalui website kami.",
+            "Pilih unit mobil yang Anda inginkan melalui website kami lalu hubungi Admin.",
         icon: "CarFront" as const,
     },
     {
         step: 2,
-        title: "Isi Jadwal",
+        title: "Booking & DP",
         description:
-            "Tentukan tanggal pengambilan dan pengembalian kendaraan.",
+            "Lakukan pembayaran Down Payment (DP) untuk mengunci estimasi jadwal Anda.",
         icon: "CalendarCheck" as const,
     },
     {
         step: 3,
-        title: "Konfirmasi",
+        title: "Persyaratan",
         description:
-            "Hubungi kami via WhatsApp untuk konfirmasi pesanan.",
+            "Siapkan dan kirimkan foto identitas diri (KTP & SIM) yang masih berlaku.",
         icon: "MessageSquare" as const,
     },
     {
         step: 4,
         title: "Mobil Siap",
         description:
-            "Unit akan kami antar atau bisa diambil di garasi.",
+            "Pelunasan saat serah terima. Unit siap diantar atau diambil di garasi.",
         icon: "KeyRound" as const,
     },
 ] as const;

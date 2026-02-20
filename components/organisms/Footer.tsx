@@ -5,6 +5,7 @@
  */
 
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, Instagram, MapPin, Clock } from "lucide-react";
 import { FOOTER_NAV, CONTACT, SITE } from "@/lib/constants";
 
@@ -19,11 +20,16 @@ export default function Footer() {
                     {/* Brand Column */}
                     <div className="lg:col-span-2">
                         <Link href="/" className="inline-flex items-center gap-2 mb-4">
-                            <span className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                                <span className="text-white font-bold text-sm font-heading">JR</span>
-                            </span>
-                            <span className="text-xl font-bold font-heading">
-                                Jayabaya<span className="text-primary">Rent</span>
+                            <div className="relative w-8 h-8 rounded-lg overflow-hidden shrink-0">
+                                <Image
+                                    src="/images/logo.png"
+                                    alt="Jayabaya Trans Logo"
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                            <span className="text-xl font-bold font-heading whitespace-nowrap">
+                                Jayabaya Trans
                             </span>
                         </Link>
                         <p className="text-white/60 font-body text-sm leading-relaxed max-w-xs mb-6">
@@ -38,7 +44,7 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-3 text-sm font-body text-white/60 hover:text-white transition-colors group"
                             >
-                                <Phone className="w-4 h-4 text-primary group-hover:scale-110 transition-transform shrink-0" />
+                                <Phone className="w-4 h-4 text-white group-hover:scale-110 transition-transform shrink-0" />
                                 {CONTACT.whatsappFormatted}
                             </a>
                             <a
@@ -47,15 +53,15 @@ export default function Footer() {
                                 rel="noopener noreferrer"
                                 className="flex items-center gap-3 text-sm font-body text-white/60 hover:text-white transition-colors group"
                             >
-                                <Instagram className="w-4 h-4 text-primary group-hover:scale-110 transition-transform shrink-0" />
+                                <Instagram className="w-4 h-4 text-white group-hover:scale-110 transition-transform shrink-0" />
                                 {CONTACT.instagram}
                             </a>
                             <div className="flex items-start gap-3 text-sm font-body text-white/60">
-                                <MapPin className="w-4 h-4 text-primary shrink-0 mt-0.5" />
+                                <MapPin className="w-4 h-4 text-white shrink-0 mt-0.5" />
                                 <span>{CONTACT.address}</span>
                             </div>
                             <div className="flex items-center gap-3 text-sm font-body text-white/60">
-                                <Clock className="w-4 h-4 text-primary shrink-0" />
+                                <Clock className="w-4 h-4 text-white shrink-0" />
                                 {CONTACT.operationalHours}
                             </div>
                         </div>
@@ -108,7 +114,7 @@ export default function Footer() {
                         &copy; {currentYear} {SITE.name}. Semua hak dilindungi.
                     </p>
                     <p className="text-xs text-white/40 font-body">
-                        Sewa mobil terpercaya di Pare, Kediri
+                        {SITE.tagline}
                     </p>
                 </div>
             </div>

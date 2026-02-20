@@ -1,5 +1,5 @@
 /**
- * Car data — 20 vehicles for Jayabaya Rent fleet
+ * Car data — 20 vehicles for Jayabaya Trans fleet
  * All components must import car data from this file
  */
 
@@ -41,10 +41,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 350000,
         images: [
-            "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80",
-            "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80",
-            "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
-            "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.3L Dual VVT-i",
@@ -71,10 +68,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 380000,
         images: [
-            "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80",
-            "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80",
-            "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
-            "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.3L Dual VVT-i CVT",
@@ -101,10 +95,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 550000,
         images: [
-            "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&q=80",
-            "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "2.4L Diesel",
@@ -131,10 +122,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 600000,
         images: [
-            "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&q=80",
-            "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "2.4L Diesel AT",
@@ -161,10 +149,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 450000,
         images: [
-            "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-            "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80",
-            "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&q=80",
-            "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
+            "/images/suv.png",
         ],
         specs: {
             engine: "1.5L Dual VVT-i",
@@ -191,10 +176,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 800000,
         images: [
-            "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-            "https://images.unsplash.com/photo-1606611013016-969c19ba27aa?w=800&q=80",
-            "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80",
-            "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800&q=80",
+            "/images/suv.png",
         ],
         specs: {
             engine: "2.4L VN Turbo Diesel",
@@ -221,10 +203,7 @@ export const cars: Car[] = [
         capacity: 14,
         pricePerDay: 900000,
         images: [
-            "https://images.unsplash.com/photo-1570125909232-eb263c188f7e?w=800&q=80",
-            "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&q=80",
-            "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=800&q=80",
-            "https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&q=80",
+            "/images/mini-bus.png",
         ],
         specs: {
             engine: "2.8L Diesel",
@@ -251,10 +230,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 330000,
         images: [
-            "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
-            "https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=800&q=80",
-            "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=800&q=80",
-            "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.3L DOHC",
@@ -281,10 +257,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 360000,
         images: [
-            "https://images.unsplash.com/photo-1580273916550-e323be2ae537?w=800&q=80",
-            "https://images.unsplash.com/photo-1549317661-bd32c8ce0afa?w=800&q=80",
-            "https://images.unsplash.com/photo-1485291571150-772bcfc10da5?w=800&q=80",
-            "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.3L DOHC CVT",
@@ -311,10 +284,7 @@ export const cars: Car[] = [
         capacity: 5,
         pricePerDay: 280000,
         images: [
-            "https://images.unsplash.com/photo-1609521263047-f8f205293f24?w=800&q=80",
-            "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?w=800&q=80",
-            "https://images.unsplash.com/photo-1590362891991-f776e747a588?w=800&q=80",
-            "https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=800&q=80",
+            "/images/city-car.png",
         ],
         specs: {
             engine: "1.2L i-VTEC",
@@ -341,10 +311,7 @@ export const cars: Car[] = [
         capacity: 5,
         pricePerDay: 320000,
         images: [
-            "https://images.unsplash.com/photo-1606220588913-b3aacb4d2f46?w=800&q=80",
-            "https://images.unsplash.com/photo-1494905998402-395d579af36f?w=800&q=80",
-            "https://images.unsplash.com/photo-1553440569-bcc63803a83d?w=800&q=80",
-            "https://images.unsplash.com/photo-1541443131876-44b03de101c5?w=800&q=80",
+            "/images/city-car.png",
         ],
         specs: {
             engine: "1.5L i-VTEC",
@@ -371,10 +338,7 @@ export const cars: Car[] = [
         capacity: 5,
         pricePerDay: 650000,
         images: [
-            "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80",
-            "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-            "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
-            "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&q=80",
+            "/images/suv.png",
         ],
         specs: {
             engine: "1.5L VTEC Turbo",
@@ -401,10 +365,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 480000,
         images: [
-            "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80",
-            "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800&q=80",
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.5L MIVEC",
@@ -431,10 +392,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 900000,
         images: [
-            "https://images.unsplash.com/photo-1606611013016-969c19ba27aa?w=800&q=80",
-            "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?w=800&q=80",
-            "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80",
-            "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800&q=80",
+            "/images/suv.png",
         ],
         specs: {
             engine: "2.4L DI-D Turbo Diesel",
@@ -461,10 +419,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 320000,
         images: [
-            "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
-            "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80",
-            "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80",
-            "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.5L K15B",
@@ -491,10 +446,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 350000,
         images: [
-            "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
-            "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80",
-            "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80",
-            "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.5L K15B AT",
@@ -521,10 +473,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 420000,
         images: [
-            "https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80",
-            "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?w=800&q=80",
-            "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=800&q=80",
-            "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&q=80",
+            "/images/suv.png",
         ],
         specs: {
             engine: "1.5L K15B",
@@ -551,10 +500,7 @@ export const cars: Car[] = [
         capacity: 8,
         pricePerDay: 550000,
         images: [
-            "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&q=80",
-            "https://images.unsplash.com/photo-1619767886558-efdc259cde1a?w=800&q=80",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "2.0L MR20DD",
@@ -581,10 +527,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 400000,
         images: [
-            "https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80",
-            "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?w=800&q=80",
-            "https://images.unsplash.com/photo-1502877338535-766e1452684a?w=800&q=80",
-            "https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.5L Dual VVT-i CVT",
@@ -611,10 +554,7 @@ export const cars: Car[] = [
         capacity: 7,
         pricePerDay: 420000,
         images: [
-            "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=800&q=80",
-            "https://images.unsplash.com/photo-1550355291-bbee04a92027?w=800&q=80",
-            "https://images.unsplash.com/photo-1542362567-b07e54358753?w=800&q=80",
-            "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80",
+            "/images/mpv.png",
         ],
         specs: {
             engine: "1.5L Smartstream IVT",

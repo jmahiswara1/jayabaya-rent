@@ -8,6 +8,7 @@ import {
     MapPin,
 } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import PageLayout from "@/components/layout/PageLayout";
 import SectionTitle from "@/components/molecules/SectionTitle";
 import StatCard from "@/components/molecules/StatCard";
@@ -27,7 +28,7 @@ const TIMELINE = [
     {
         year: "2015",
         title: "Berdiri",
-        desc: "Jayabaya Rent didirikan dengan 3 unit armada perdana di Pare, Kediri.",
+        desc: "Jayabaya Trans didirikan dengan 3 unit armada perdana di Pare, Kediri.",
     },
     {
         year: "2018",
@@ -51,53 +52,69 @@ export default function AboutPage() {
         <PageLayout>
             {/* Hero Section */}
             <section className="relative bg-charcoal text-white py-24 md:py-32 overflow-hidden">
-                {/* Background glow */}
-                <div className="absolute inset-0 pointer-events-none">
-                    <div className="absolute top-1/2 left-1/4 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl -translate-y-1/2" />
+                {/* Background Image */}
+                <div className="absolute inset-0 z-0">
+                    <Image
+                        src="/images/about.jpeg"
+                        alt="Jayabaya Trans About Background"
+                        fill
+                        className="object-cover object-center opacity-40 mix-blend-luminosity"
+                        priority
+                        sizes="100vw"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-r from-charcoal via-charcoal/80 to-transparent" />
                 </div>
-                <div className="container-main relative z-10 text-center max-w-3xl mx-auto">
-                    <motion.span
-                        initial={{ opacity: 0, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.1 }}
-                        className="text-sm font-semibold text-primary uppercase tracking-wider font-body"
-                    >
-                        Tentang Kami
-                    </motion.span>
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="mt-4 text-4xl md:text-5xl font-bold font-heading leading-tight"
-                    >
-                        Mitra Perjalanan <span className="text-primary">Terpercaya</span> Anda di Kediri
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.35 }}
-                        className="mt-5 text-white/70 font-body text-lg leading-relaxed"
-                    >
-                        Sejak 2015, Jayabaya Rent hadir untuk menemani perjalanan Anda dengan armada terawat,
-                        harga transparan, dan pelayanan yang hangat.
-                    </motion.p>
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.5 }}
-                        className="mt-8 flex flex-col sm:flex-row gap-3 justify-center"
-                    >
-                        <Link href="/catalog">
-                            <Button size="lg" pill>
-                                Lihat Armada Kami
-                            </Button>
-                        </Link>
-                        <a href={CONTACT.whatsappLink} target="_blank" rel="noopener noreferrer">
-                            <Button variant="outline" size="lg" pill className="border-white/30 text-white hover:bg-white/10">
-                                Hubungi Kami
-                            </Button>
-                        </a>
-                    </motion.div>
+
+                {/* Background glow */}
+                <div className="absolute inset-0 z-0 pointer-events-none">
+                    <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-primary/20 rounded-full blur-3xl -translate-y-1/2" />
+                </div>
+
+                <div className="container-main relative z-10">
+                    <div className="text-left w-full max-w-2xl mx-auto lg:mx-0">
+                        <motion.span
+                            initial={{ opacity: 0, y: 10 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.1 }}
+                            className="inline-block px-3 py-1 bg-charcoal/50 backdrop-blur-sm border border-white/10 rounded-full text-xs font-semibold text-primary uppercase tracking-wider font-body mb-4"
+                        >
+                            Tentang Kami
+                        </motion.span>
+                        <motion.h1
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.2 }}
+                            className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading leading-tight"
+                        >
+                            Mitra Perjalanan <span className="text-primary">Terpercaya</span> Anda di Kediri
+                        </motion.h1>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.35 }}
+                            className="mt-6 text-white/80 font-body text-lg md:text-xl leading-relaxed max-w-xl"
+                        >
+                            Sejak 2015, Jayabaya Trans hadir untuk menemani perjalanan Anda dengan armada terawat,
+                            harga transparan, dan pelayanan yang hangat.
+                        </motion.p>
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                            className="mt-10 flex flex-col sm:flex-row gap-4 justify-start"
+                        >
+                            <Link href="/catalog">
+                                <Button size="lg" pill className="w-full sm:w-auto shadow-lg shadow-primary/20">
+                                    Lihat Armada Kami
+                                </Button>
+                            </Link>
+                            <a href={CONTACT.whatsappLink} target="_blank" rel="noopener noreferrer">
+                                <Button variant="outline" size="lg" pill className="w-full sm:w-auto border-white/30 text-white hover:bg-white/10 backdrop-blur-sm">
+                                    Hubungi Kami
+                                </Button>
+                            </a>
+                        </motion.div>
+                    </div>
                 </div>
             </section>
 
@@ -172,7 +189,7 @@ export default function AboutPage() {
                 <div className="container-main">
                     <SectionTitle
                         label="Keunggulan Kami"
-                        title="Mengapa Pilih Jayabaya Rent?"
+                        title="Mengapa Pilih Jayabaya Trans?"
                         align="center"
                     />
                     <motion.div
